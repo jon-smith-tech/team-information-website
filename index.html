@@ -1,143 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Repository</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-    /* Dark Mode */
-    :root {
-                --primary-color: #302ae6;
-                --secondary-color: #536390;
-                --font-color: #424242;
-                --bg-color: #fff;
-                --heading-color: #292922;
-            }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Repository</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Dark Mode */
+        :root {
+            --primary-color: #302ae6;
+            --secondary-color: #536390;
+            --font-color: #424242;
+            --bg-color: #fff;
+            --heading-color: #292922;
+        }
 
-            [data-theme="dark"] {
-                --primary-color: #9a97f3;
-                --secondary-color: #818cab;
-                --font-color: #e1e1ff;
-                --bg-color: #161625;
-                --heading-color: #818cab;
-            }
+        [data-theme="dark"] {
+            --primary-color: #9a97f3;
+            --secondary-color: #818cab;
+            --font-color: #e1e1ff;
+            --bg-color: #161625;
+            --heading-color: #818cab;
+        }
 
-            [data-theme="dark"] body {
-                background-color: var(--bg-color);
-            }
+        [data-theme="dark"] body {
+            background-color: var(--bg-color);
+        }
 
-            [data-theme="dark"] nav {
-                background-color: #071c4d;
-            }
+        [data-theme="dark"] nav {
+            background-color: #071c4d;
+        }
 
-            [data-theme="dark"] h1, p {
-                color:var(--font-color);
-            }
+        [data-theme="dark"] h1,
+        p {
+            color: var(--font-color);
+        }
 
-            .theme-switch-wrapper {
-                display: flex;
-                margin-top: 20px;
-            }
+        .theme-switch-wrapper {
+            display: flex;
+            margin-top: 20px;
+        }
 
-            .theme-switch>p {
-                font-size: 12px;
-                margin-top: 33px;
-                width: 60px;
-                margin-left: 0;
-            }
+        .theme-switch>p {
+            font-size: 12px;
+            margin-top: 33px;
+            width: 60px;
+            margin-left: 0;
+        }
 
-            .theme-switch {
-                display: inline-block;
-                height: 34px;
-                position: relative;
-                width: 60px;
-            }
-            
-            .theme-switch>input {
-                display: none;
-            }
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
 
-            .slider {
-                background-color: #ccc;
-                bottom: 0;
-                cursor: pointer;
-                left: 0;
-                position: absolute;
-                right: 0;
-                top: 0;
-                transition: 0.4s;
-            }
+        .theme-switch>input {
+            display: none;
+        }
 
-            .slider:before {
-                background-color: #fff;
-                bottom: 4px;
-                content: "";
-                height: 26px;
-                left: 4px;
-                position: absolute;
-                transition: 0.4s;
-                width: 26px;
-            }
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: 0.4s;
+        }
 
-            input:checked + .slider {
-                background-color: #66bb6a;
-            }
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: 0.4s;
+            width: 26px;
+        }
 
-            input:checked + .slider:before {
-                transform: translateX(26px);
-            }
+        input:checked+.slider {
+            background-color: #66bb6a;
+        }
 
-            .slider.round {
-                border-radius: 34px;
-            }
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
 
-            .slider.round:before {
-                border-radius: 50%;
-            }
-  </style>
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="theme-switch-wrapper pl-5">
-    <label for="checkbox" class="theme-switch">
-        <input type="checkbox" id="checkbox">
+    <div class="theme-switch-wrapper pl-5">
+        <label for="checkbox" class="theme-switch">
+            <input type="checkbox" id="checkbox">
             <div class="slider round"></div>
             <p>Dark Mode</p>
-    </label>
-  </div>
+        </label>
+    </div>
 
-  <h1 class="text-center pt-5">Welcome Contributor</h1>
-  <p class="text-center pt-3"><b>Jon Smith</b></p>
-  <p class="text-center"><b>M.Finuary Renggalih</b></p>
-  
-  <script>
-    // Dark Mode
-    window.console = window.console || function (t) {};
-    if (document.location.search.match(/type=embed/gi)) {
-        window.parent.postMessage("resize", "*");
-    }
-    console.log('Dark Mode On');
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    <div class="container">
+        <h1 class="text-center pt-5">Welcome Contributor</h1>
+        <p class="text-center pt-3"><b>Jon Smith</b></p>
+        <p class="text-center"><b>M.Finuary Renggalih</b></p>
+    </div>
 
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
+    <div class="container">
+        <footer class="pt-3 mt-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dark Mode
+        window.console = window.console || function (t) {};
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
         }
-    }
-    toggleSwitch.addEventListener('change', switchTheme, false);
+        console.log('Dark Mode On');
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
         }
-    }
-</script>
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+    </script>
 </body>
+
 </html>
